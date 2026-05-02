@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Subway Runner - Corrida Infinita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        
+        <!-- Tela Inicial -->
+        <div id="startScreen" class="start-screen">
+            <div class="start-card">
+                <h1>🏃‍♂️ SUBWAY RUNNER 🏃‍♀️</h1>
+                <p>Corra, colete e não bata nos obstáculos!</p>
+                <div class="controls-demo">
+                    <div class="control-icon">← →</div>
+                    <span>Mover</span>
+                    <div class="control-icon">↑</div>
+                    <span>Pular</span>
+                    <div class="control-icon">↓</div>
+                    <span>Deslizar</span>
+                </div>
+                <button id="startButton" class="start-btn">▶ INICIAR CORRIDA</button>
+            </div>
+        </div>
+        
+        <!-- Interface do jogo -->
+        <div class="game-ui hidden" id="gameUI">
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-value" id="score">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">🪙</div>
+                    <div class="stat-value" id="coins">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">💎</div>
+                    <div class="stat-value" id="diamonds">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-value" id="speed">1</div>
+                </div>
+            </div>
+            <div class="highscore-box">
+                <div class="stat-icon">🏅</div>
+                <div class="stat-value" id="highScore">0</div>
+            </div>
+        </div>
+        
+        <!-- Tela de Game Over -->
+        <div id="gameOverlay" class="game-overlay hidden">
+            <div class="game-over-card">
+                <h2>💀 GAME OVER 💀</h2>
+                <div class="final-stats">
+                    <p>🏆 Pontuação: <span id="finalScore">0</span></p>
+                    <p>🪙 Moedas: <span id="finalCoins">0</span></p>
+                    <p>💎 Diamantes: <span id="finalDiamonds">0</span></p>
+                    <p>📏 Distância: <span id="finalDistance">0</span>m</p>
+                </div>
+                <button id="restartButton" class="restart-btn">🔄 JOGAR NOVAMENTE</button>
+            </div>
+        </div>
+        
+        <!-- Instruções Mobile -->
+        <div class="mobile-instructions hidden" id="mobileInstructions">
+            <div class="swipe-area">
+                <span>← →</span> Mover &nbsp;&nbsp;|&nbsp;&nbsp;
+                <span>↑</span> Pular &nbsp;&nbsp;|&nbsp;&nbsp;
+                <span>↓</span> Deslizar
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
